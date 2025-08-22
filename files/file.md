@@ -1,3 +1,3 @@
-En un bosque iluminado por luciérnagas, vivía un zorro curioso llamado Kiro. Cada noche corría entre los árboles dejando un rastro de hojas brillantes, como si pintara estrellas en el suelo. Su energía era tan contagiosa que los animales se reunían solo para verlo saltar y rodar con alegría.
+Mateo, un colibrí diminuto, soñaba con volar más alto que las nubes. Cada mañana entrenaba batiendo sus alas frente al sol, hasta que un día alcanzó una corriente de aire que lo elevó como nunca antes.
 
-Un día, Kiro descubrió un río que cantaba al moverse entre las piedras. Fascinado, empezó a bailar al ritmo del agua, y pronto todos los animales lo acompañaron en una gran fiesta. Desde entonces, cada luna llena, el bosque entero se convierte en un escenario de risas, música y amistad.
+Desde arriba vio todo el valle brillar como un tapiz de colores. Regresó feliz a contar su aventura, y aunque nadie creyó que llegó tan alto, Mateo sonrió: sabía que los sueños se vuelven reales cuando se baten las alas sin rendirse.
