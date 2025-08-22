@@ -29,7 +29,7 @@ for COMMIT in "${COMMITS[@]}"; do
         git cherry-pick $c
       done
 
-      git push origin $BRANCH_NAME
+      git push "$REPO" "$BRANCH_NAME"
 
       gh pr create \
         --base "$PREV_BRANCH" \
@@ -58,7 +58,7 @@ if [ ${#CHUNK_COMMITS[@]} -gt 0 ]; then
     git cherry-pick $c
   done
 
-  git push origin $BRANCH_NAME
+  git push "$REPO" "$BRANCH_NAME"
 
   gh pr create \
     --base "$PREV_BRANCH" \
