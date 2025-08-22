@@ -29,12 +29,6 @@ jobs:
           echo "Token starts with: ${GITHUB_TOKEN:0:5}..."
           echo "Repo: ${GITHUB_REPOSITORY}"
 
-      - name: Set up Git
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          export REPO="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-
       - name: Set up Git and auth
         run: |
           git config --global user.name "github-actions"
