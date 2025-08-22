@@ -1,0 +1,36 @@
+name: Split branch into chunks
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_branch:
+        description: 'Branch to split'
+        required: true
+      username:
+        description: 'GitHub username for prefix'
+        required: true
+      base_name:
+        description: 'Base name for chunk branches'
+        required: true
+
+jobs:
+  split:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # necesario para acceder a todos los commits
+
+      - name: Set up Git
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+      - name: Run chunk splitter
+        run: |
+          chmod +x .github/scripts/split-commits.sh
+          .github/scripts/split-commits.sh \
+            "${{ github.event.inputs.source_branch }}" \
+            "${{ github.event.inputs.username }}" \
+            "${{ github.event.inputs.base_name }}"
