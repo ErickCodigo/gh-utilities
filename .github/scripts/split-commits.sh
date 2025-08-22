@@ -4,7 +4,7 @@ SOURCE_BRANCH=$1
 USERNAME=$2
 BASENAME=$3
 LINE_LIMIT=10
-MAIN_BRANCH="main"  # puedes hacerlo variable si quieres
+MAIN_BRANCH="master"
 
 git fetch origin
 git checkout $SOURCE_BRANCH
@@ -31,7 +31,6 @@ for COMMIT in "${COMMITS[@]}"; do
 
       git push origin $BRANCH_NAME
 
-      # Crear PR apuntando a rama anterior
       gh pr create \
         --base "$PREV_BRANCH" \
         --head "$BRANCH_NAME" \
