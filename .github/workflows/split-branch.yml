@@ -37,8 +37,10 @@ jobs:
           # Configurar autenticación para git push
           git config --global url."https://x-access-token:${GITHUB_TOKEN}@github.com/".insteadOf "https://github.com/"
 
+          echo "$GITHUB_TOKEN"
+
           # Autenticación para GitHub CLI (modo no interactivo)
-          gh auth login --hostname github.com --with-token < <(echo "${GITHUB_TOKEN}")
+          # gh auth login --hostname github.com --with-token < <(echo "${GITHUB_TOKEN}")
           # gh auth setup-git
       
           # Exportar variable REPO para usar en el script
