@@ -6,6 +6,10 @@ BASENAME=$3
 LINE_LIMIT=10
 MAIN_BRANCH="master"
 
+echo "SOURCE_BRANCH: $SOURCE_BRANCH"
+echo "REPO: $REPO"
+echo "BRANCH_NAME: $BRANCH_NAME"
+
 git fetch origin
 git checkout $SOURCE_BRANCH
 
