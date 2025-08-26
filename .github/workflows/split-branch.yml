@@ -30,6 +30,7 @@ jobs:
           echo "Repo: ${GITHUB_REPOSITORY}"
 
       - name: Set up Git and auth
+        shell: bash
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
@@ -37,14 +38,12 @@ jobs:
           # Configurar autenticación para git push
           git config --global url."https://x-access-token:${GITHUB_TOKEN}@github.com/".insteadOf "https://github.com/"
 
-          echo "$GITHUB_TOKEN"
-
           # Autenticación para GitHub CLI (modo no interactivo)
-          # gh auth login --hostname github.com --with-token < <(echo "${GITHUB_TOKEN}")
-          # gh auth setup-git
+          gh auth login --hostname github.com --with-token < <(echo "${GITHUB_TOKEN}")
+          gh auth setup-git
       
           # Exportar variable REPO para usar en el script
-          # echo "REPO=https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" >> $GITHUB_ENV
+          echo "REPO=https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" >> $GITHUB_ENV
 
       - name: Run chunk splitter
         run: |
