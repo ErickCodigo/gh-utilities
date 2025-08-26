@@ -39,7 +39,7 @@ jobs:
 
           # Autenticación para GitHub CLI (modo no interactivo)
           gh auth login --hostname github.com --with-token < <(echo "${GITHUB_TOKEN}")
-          gh auth setup-git
+          # gh auth setup-git
       
           # Exportar variable REPO para usar en el script
           # echo "REPO=https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" >> $GITHUB_ENV
