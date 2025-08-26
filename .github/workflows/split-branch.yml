@@ -42,7 +42,7 @@ jobs:
           gh auth setup-git
       
           # Exportar variable REPO para usar en el script
-          echo "REPO=https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" >> $GITHUB_ENV
+          # echo "REPO=https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" >> $GITHUB_ENV
 
       - name: Run chunk splitter
         run: |
