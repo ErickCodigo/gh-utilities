@@ -29,17 +29,15 @@ jobs:
           echo "Token starts with: ${GITHUB_TOKEN:0:5}..."
           echo "Repo: ${GITHUB_REPOSITORY}"
 
-      - name: Set up Git and auth
+      - name: Autenticación gh CLI
         shell: bash
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
 
-          # Configurar autenticación para git push
-          git config --global url."https://x-access-token:${GITHUB_TOKEN}@github.com/".insteadOf "https://github.com/"
-
-          # Autenticación para GitHub CLI (modo no interactivo)
-          gh auth login --hostname github.com --with-token < <(echo "${GITHUB_TOKEN}")
+          echo "${GITHUB_TOKEN}" > token.txt
+          gh auth login --hostname github.com --with-token < token.txt
+          rm token.txt
           gh auth setup-git
       
           # Exportar variable REPO para usar en el script
